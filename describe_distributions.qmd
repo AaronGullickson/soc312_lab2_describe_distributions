@@ -1,10 +1,14 @@
 ---
 title: "Describing Distributions"
 author: "Your name here"
-output: pdf_document
+format: pdf
+editor: visual
 ---
 
 ```{r setup, include=FALSE}
+#| label: setup
+#| include: false 
+
 # This is an R code chunk that sets up some default parameters, loads the data,
 # and loads the ggplot library. DO NOT EDIT OR REMOVE THIS CODE CHUNK. Whenever
 # you start working on your project, you should use the green play button on the
@@ -24,13 +28,18 @@ load("titanic.RData")
 
 Please do not modify anything above this section, except for your name in the author field at the top.
 
-Follow the instructions on Canvas to create a PDF from this R Markdown file that shows and describes the distribution of several variables. Each variable should be placed in a separate section with appropriate headers. You can use the template below to get started, but ultimately you should replace everything with the correct variables and you should also remove these instructions.
+Follow the instructions on Canvas to create a PDF from this quarto file that shows and describes the distribution of several variables. Each variable should be placed in a separate section with appropriate headers. You can use the template below to get started, but ultimately you should replace everything with the correct variables and you should also remove these instructions.
+
+Be sure to label each of your figures with a unique label that starts with "fig-". Then you can reference it in the text like @fig-label.
 
 ## A Header
 
-Some description of the variable goes here.
+Be sure to describe your variable in addition to producing the figure. This description should include some summary measures in the case of quantitative variables.
 
-```{r, fig.cap="Comparative boxplots of movie runtime by genre. Outliers are shown in red."}
+```{r, fig.cap=""}
+#| label: fig-label
+#| fig-cap: Comparative boxplots of movie runtime by genre. Outliers are shown in red.
+
 # This is an R code chunk. The R code here is producing a figure that will be
 # displayed when the R Markdown document is knit. You can get a preview of this
 # figure by hitting the green play button on the right. You can use this R code
@@ -48,13 +57,10 @@ ggplot(movies, aes(x=reorder(Genre, Runtime, median), y=Runtime))+
 
 You would put another R code chunk here and description.
 
-```{r, fig.cap="Comparative boxplots of movie runtime by genre. Outliers are shown in red."}
-# This is an R code chunk. The R code here is producing a figure that will be
-# displayed when the R Markdown document is knit. You can get a preview of this
-# figure by hitting the green play button on the right. You can use this R code
-# chunk as a template for your own by copying and pasting, but you should
-# replace the code with proper code for the assignment. Also remember to change
-# the caption in the code chunk header above.
+```{r}
+#| label: fig-another-label
+#| fig-cap: Put your figure caption here
+
 ggplot(movies, aes(x=reorder(Genre, Runtime, median), y=Runtime))+
   geom_boxplot(fill="skyblue", outlier.color = "red")+
   coord_flip()+
