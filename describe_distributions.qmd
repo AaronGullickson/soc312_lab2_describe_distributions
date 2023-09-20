@@ -46,7 +46,7 @@ Be sure to describe your variable in addition to producing the figure. This desc
 # chunk as a template for your own by copying and pasting, but you should
 # replace the code with proper code for the assignment. Also remember to change
 # the caption in the code chunk header above.
-ggplot(movies, aes(x=reorder(Genre, Runtime, median), y=Runtime))+
+ggplot(movies, aes(x=reorder(genre, runtime, median), y=runtime))+
   geom_boxplot(fill="skyblue", outlier.color = "red")+
   coord_flip()+
   labs(x=NULL, y="runtime in minutes")+
@@ -61,9 +61,5 @@ You would put another R code chunk here and description.
 #| label: fig-another-label
 #| fig-cap: Put your figure caption here
 
-ggplot(movies, aes(x=reorder(Genre, Runtime, median), y=Runtime))+
-  geom_boxplot(fill="skyblue", outlier.color = "red")+
-  coord_flip()+
-  labs(x=NULL, y="runtime in minutes")+
-  theme_bw()
+# put some code here!
 ```
