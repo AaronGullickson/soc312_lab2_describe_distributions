@@ -5,7 +5,7 @@ format: pdf
 editor: visual
 ---
 
-```{r setup, include=FALSE}
+```{r}
 #| label: setup
 #| include: false 
 
@@ -36,7 +36,7 @@ Be sure to label each of your figures with a unique label that starts with "fig-
 
 Be sure to describe your variable in addition to producing the figure. This description should include some summary measures in the case of quantitative variables.
 
-```{r, fig.cap=""}
+```{r}
 #| label: fig-label
 #| fig-cap: Comparative boxplots of movie runtime by genre. Outliers are shown in red.
 
